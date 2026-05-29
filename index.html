@@ -1,0 +1,1120 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>阅星人高级别产品概述</title>
+  <style>
+    :root {
+      --ink: #102033;
+      --muted: #5f7187;
+      --subtle: #e7eef8;
+      --line: #c9d8eb;
+      --paper: #ffffff;
+      --mist: #f4f8fd;
+      --white: #ffffff;
+      --blue: #1d6fb8;
+      --blue-dark: #0b3a69;
+      --blue-800: #164f86;
+      --blue-600: #2384d3;
+      --blue-100: #dbeafe;
+      --cyan: #0891b2;
+      --green: #15803d;
+      --amber: #b45309;
+      --coral: #c9352d;
+      --soft-blue: #e8f1f7;
+      --soft-green: #e7f2ee;
+      --soft-amber: #fff3d8;
+      --soft-coral: #fae8e3;
+      --shadow: 0 18px 55px rgba(16, 58, 105, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--ink);
+      background:
+        linear-gradient(180deg, #e8f2ff 0, #f7fbff 430px, #ffffff 100%),
+        var(--paper);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      overflow: hidden;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 520px;
+      display: grid;
+      align-items: center;
+      overflow: hidden;
+      background:
+        linear-gradient(130deg, rgba(8, 55, 103, 0.96), rgba(29, 111, 184, 0.9)),
+        #0b3a69;
+      color: #f8fbff;
+      border-bottom: 0;
+    }
+
+    .hero::after {
+      position: absolute;
+      inset: auto 0 0;
+      height: 88px;
+      content: "";
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(244, 248, 253, 1)),
+        repeating-linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0.16) 0 1px,
+          transparent 1px 72px
+        );
+      pointer-events: none;
+    }
+
+    .hero__inner,
+    .section__inner {
+      width: min(1120px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .hero__inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(300px, 500px);
+      gap: 38px;
+      align-items: center;
+    }
+
+    .topbar {
+      position: absolute;
+      top: 24px;
+      left: 0;
+      right: 0;
+      z-index: 2;
+    }
+
+    .topbar__inner {
+      width: min(1120px, calc(100% - 48px));
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      color: #f8fbff;
+      font-weight: 700;
+    }
+
+    .topbar__links {
+      display: flex;
+      gap: 18px;
+      color: #c9e6ff;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .hero__copy {
+      max-width: 760px;
+      padding: 86px 0 76px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      color: #9be4ff;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 3px;
+      background: #9be4ff;
+      display: inline-block;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    h1 {
+      max-width: 760px;
+      font-size: clamp(40px, 5vw, 58px);
+      line-height: 1.1;
+      letter-spacing: 0;
+      color: #f8fbff;
+    }
+
+    .hero__lead {
+      max-width: 660px;
+      margin-top: 24px;
+      font-size: clamp(18px, 2vw, 23px);
+      color: #d7ebff;
+      font-weight: 600;
+    }
+
+    .hero__note {
+      max-width: 660px;
+      margin-top: 20px;
+      font-size: 16px;
+      color: #c9e6ff;
+    }
+
+    .hero__art {
+      position: relative;
+      z-index: 1;
+      width: min(100%, 520px);
+      justify-self: end;
+      border: 1px solid rgba(255, 255, 255, 0.34);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 10px 18px;
+      border: 1px solid var(--blue);
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 800;
+      background: var(--blue);
+      color: var(--white);
+    }
+
+    .button--secondary {
+      background: rgba(255, 255, 255, 0.12);
+      color: #f8fbff;
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    section {
+      padding: 70px 0;
+    }
+
+    .section--white {
+      background: var(--white);
+    }
+
+    .section--blue {
+      background: var(--mist);
+    }
+
+    .section__head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(280px, 0.58fr);
+      gap: 48px;
+      align-items: end;
+      margin-bottom: 34px;
+    }
+
+    .label {
+      color: var(--blue);
+      font-size: 14px;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.16;
+      letter-spacing: 0;
+    }
+
+    .section__summary {
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .highlight,
+    .feature,
+    .result-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+      box-shadow: 0 10px 24px rgba(21, 34, 53, 0.06);
+    }
+
+    .highlight {
+      min-height: 220px;
+      padding: 24px;
+      position: relative;
+    }
+
+    .highlight__number,
+    .feature__tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      color: var(--white);
+      font-weight: 900;
+      margin-bottom: 18px;
+      background: var(--blue);
+    }
+
+    .highlight:nth-child(2) .highlight__number {
+      background: var(--green);
+    }
+
+    .highlight:nth-child(3) .highlight__number {
+      background: var(--coral);
+    }
+
+    .highlight h3,
+    .feature h3,
+    .result-card h3 {
+      font-size: 21px;
+      line-height: 1.28;
+      margin-bottom: 10px;
+    }
+
+    .highlight p,
+    .feature p,
+    .result-card p {
+      color: var(--muted);
+      font-size: 15.5px;
+    }
+
+    .definition {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.6fr);
+      gap: 40px;
+      align-items: start;
+    }
+
+    .definition__quote {
+      font-size: clamp(24px, 3vw, 36px);
+      line-height: 1.35;
+      font-weight: 900;
+      color: var(--blue-dark);
+    }
+
+    .definition__body {
+      display: grid;
+      gap: 16px;
+      color: #27364b;
+      font-size: 17px;
+    }
+
+    .path {
+      margin-top: 44px;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .path__step {
+      min-height: 142px;
+      padding: 18px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: var(--white);
+    }
+
+    .path__step strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--blue-dark);
+      font-size: 18px;
+    }
+
+    .path__step span {
+      color: var(--muted);
+      font-size: 14.5px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .feature {
+      padding: 24px;
+    }
+
+    .feature__tag {
+      background: var(--blue-dark);
+      font-size: 14px;
+      min-width: 76px;
+      padding: 0 10px;
+    }
+
+    .feature:nth-child(2n) .feature__tag {
+      background: var(--green);
+    }
+
+    .feature:nth-child(3n) .feature__tag {
+      background: var(--amber);
+    }
+
+    .feature:nth-child(4n) .feature__tag {
+      background: var(--coral);
+    }
+
+    .feature__sub {
+      display: inline-block;
+      margin: 2px 0 12px;
+      color: var(--blue);
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .faq-card {
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+      box-shadow: 0 10px 24px rgba(21, 34, 53, 0.06);
+    }
+
+    .faq-card h3 {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 24px;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+
+    .faq-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: var(--blue-dark);
+      color: var(--white);
+      font-size: 15px;
+      font-weight: 900;
+    }
+
+    .qa-answer {
+      display: grid;
+      gap: 12px;
+      color: #27364b;
+      font-size: 16px;
+    }
+
+    .qa-answer ul {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding-left: 22px;
+    }
+
+    .qa-answer li::marker {
+      color: var(--blue);
+    }
+
+    .qa-subtitle {
+      margin-top: 4px;
+      color: var(--blue-dark);
+      font-weight: 900;
+    }
+
+    .qa-note {
+      display: grid;
+      gap: 10px;
+      padding: 16px 18px;
+      border-left: 4px solid var(--blue);
+      border-radius: 8px;
+      background: #f8fbfd;
+    }
+
+    .qa-weeks {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .qa-task-list {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfdff;
+    }
+
+    .qa-week {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfdff;
+    }
+
+    .qa-week strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--blue-dark);
+      font-size: 17px;
+    }
+
+    .text-red {
+      color: #c9352d;
+      font-weight: 900;
+    }
+
+    h1 .text-red {
+      color: #ffb4a8;
+    }
+
+    .text-green {
+      color: var(--green);
+      font-weight: 800;
+    }
+
+    .value-grid {
+      display: grid;
+      grid-template-columns: 0.82fr 1.18fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .value-panel {
+      padding: 30px;
+      border-radius: 8px;
+      background: var(--ink);
+      color: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .value-panel h2 {
+      color: var(--white);
+      margin-bottom: 18px;
+    }
+
+    .value-panel p {
+      color: #d7e1eb;
+      font-size: 17px;
+    }
+
+    .result-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .result-card {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 12px 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .result-card::before {
+      content: "";
+      width: 12px;
+      height: 100%;
+      min-height: 58px;
+      border-radius: 8px;
+      background: var(--blue);
+    }
+
+    .result-card:nth-child(2)::before {
+      background: var(--green);
+    }
+
+    .result-card:nth-child(3)::before {
+      background: var(--amber);
+    }
+
+    .result-card:nth-child(4)::before {
+      background: var(--coral);
+    }
+
+    .summary-band {
+      background: var(--blue-dark);
+      color: var(--white);
+      padding: 56px 0;
+    }
+
+    .summary-band__inner {
+      width: min(1120px, calc(100% - 48px));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 0.75fr) minmax(320px, 0.45fr);
+      gap: 44px;
+      align-items: center;
+    }
+
+    .summary-band h2 {
+      color: var(--white);
+    }
+
+    .summary-band p {
+      color: #d9e7f0;
+      font-size: 18px;
+      margin-top: 14px;
+    }
+
+    .closing-points {
+      display: grid;
+      gap: 12px;
+    }
+
+    .closing-points div {
+      padding: 14px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      border-radius: 8px;
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.08);
+      font-weight: 800;
+    }
+
+    .article-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .article-card {
+      display: grid;
+      min-height: 210px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+      box-shadow: 0 10px 24px rgba(21, 34, 53, 0.06);
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    }
+
+    .article-card:hover {
+      transform: translateY(-3px);
+      border-color: #9bb9cc;
+      box-shadow: 0 18px 36px rgba(21, 34, 53, 0.12);
+    }
+
+    .article-card__label {
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .article-card h3 {
+      font-size: 23px;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+
+    .article-card__cta {
+      align-self: end;
+      color: var(--blue);
+      font-size: 15px;
+      font-weight: 900;
+    }
+
+    footer {
+      padding: 28px 0;
+      background: #101a28;
+      color: #b9c7d5;
+      font-size: 14px;
+    }
+
+    footer .section__inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 900px) {
+      .topbar__links {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero__copy {
+        padding: 82px 0 18px;
+      }
+
+      .hero__inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero__art {
+        justify-self: start;
+        max-width: 440px;
+        margin-bottom: 64px;
+      }
+
+      .section__head,
+      .definition,
+      .value-grid,
+      .qa-weeks,
+      .summary-band__inner {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .highlights,
+      .features,
+      .article-grid,
+      .path {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero__inner,
+      .section__inner,
+      .topbar__inner,
+      .summary-band__inner {
+        width: min(100% - 32px, 1120px);
+      }
+
+      section {
+        padding: 52px 0;
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+
+      .hero__lead {
+        font-size: 18px;
+      }
+
+      .hero__art {
+        max-width: 100%;
+        margin-bottom: 48px;
+      }
+
+      .button {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .highlight,
+      .feature,
+      .faq-card,
+      .value-panel {
+        padding: 20px;
+      }
+
+      .faq-card h3 {
+        font-size: 20px;
+      }
+
+      .qa-answer {
+        font-size: 15.5px;
+      }
+    }
+
+    @media print {
+      .topbar,
+      .hero__actions {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 42px 0;
+      }
+
+      section,
+      .summary-band {
+        padding: 36px 0;
+      }
+
+      body {
+        background: #ffffff;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="topbar">
+      <div class="topbar__inner">
+        <a href="#top">阅星人高级别产品</a>
+        <nav class="topbar__links" aria-label="页面导航">
+          <a href="#features">产品特点</a>
+          <a href="#faq">您关心的问题</a>
+          <a href="#value">语文价值</a>
+          <a href="#outcomes">家长可见成果</a>
+        </nav>
+      </div>
+    </div>
+
+    <section class="hero" id="top">
+      <div class="hero__inner">
+        <div class="hero__copy">
+          <div class="eyebrow">阅星人高级别（L3 以上）阅读课程</div>
+          <h1>用<span class="text-red">好书</span>训练孩子<br>核心<span class="text-red">语文素养</span></h1>
+          <p class="hero__lead">同步校内语文知识点，以优质课外文本为载体，通过精读课堂提升阅读理解、语言表达、写作迁移和独立思考能力。</p>
+          <p class="hero__note">核心价值不只是“带孩子多读书”，而是把阅读变成一条清晰的语文能力成长路径，科学培养孩子的底层语文学习能力。</p>
+          <div class="hero__actions">
+            <a class="button" href="#highlights">查看三大亮点</a>
+            <a class="button button--secondary" href="#features">了解产品特点</a>
+          </div>
+        </div>
+        <img class="hero__art" src="yuexingren-advanced-assets/reading-mark.svg" alt="蓝色书页阅读插画">
+      </div>
+    </section>
+
+    <section class="section--white" id="highlights">
+      <div class="section__inner">
+        <div class="section__head">
+          <div>
+            <div class="label">三大亮点</div>
+            <h2>从读过一本书，到读懂、会说、能写、会思考</h2>
+          </div>
+          <p class="section__summary">高级别课程把课外阅读和校内语文能力打通，让孩子在真实文本中练方法，在表达输出中看见成长。</p>
+        </div>
+        <div class="highlights">
+          <article class="highlight">
+            <div class="highlight__number">1</div>
+            <h3>用好书训练核心语文素养</h3>
+            <p>选择儿童文学、寓言、诗歌、名著、自然文学、人物传记等高质量文本，让语言、结构、人物和主题自然进入课堂。</p>
+          </article>
+          <article class="highlight">
+            <div class="highlight__number">2</div>
+            <h3>校内知识点与精读方法打通</h3>
+            <p>大纲设计同步校内语文路径，用精读方法训练字词句、修辞、概括、人物分析、主题提炼和写作表达。</p>
+          </article>
+          <article class="highlight">
+            <div class="highlight__number">3</div>
+            <h3>阅读理解走向表达输出</h3>
+            <p>孩子不止听懂故事，还要找证据、抓关键词、梳理结构、表达观点，最终完成复述、讨论、仿写和写作迁移。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section--blue">
+      <div class="section__inner">
+        <div class="definition">
+          <p class="definition__quote">阅星人高级别产品，是一套“同步校内、课外精读、能力进阶”的分级阅读课程。</p>
+          <div class="definition__body">
+            <p>孩子在课堂上读懂文本、学习方法、参与讨论、完成表达，再通过课后任务把能力延伸到家庭阅读和校内语文学习中。</p>
+            <p>它不是零散的兴趣拓展，而是围绕底层语文学习能力设计：阅读理解、语言表达、写作迁移、独立思考，逐层生长。</p>
+          </div>
+        </div>
+        <div class="path" aria-label="能力成长路径">
+          <div class="path__step"><strong>读懂文本</strong><span>理解情节、人物、主题和语言。</span></div>
+          <div class="path__step"><strong>学习方法</strong><span>抓关键词、找证据、梳理结构。</span></div>
+          <div class="path__step"><strong>参与讨论</strong><span>表达观点，听见不同理解。</span></div>
+          <div class="path__step"><strong>完成输出</strong><span>复述、仿写、段落和观点表达。</span></div>
+          <div class="path__step"><strong>课后迁移</strong><span>回到家庭阅读和校内语文。</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section--white" id="features">
+      <div class="section__inner">
+        <div class="section__head">
+          <div>
+            <div class="label">高级别产品特点</div>
+            <h2>把语文学习价值落实到每一节课的交付里</h2>
+          </div>
+          <p class="section__summary">从大纲设计、文本选择、课堂路径到课后作业，课程让家长能清楚看到“学了什么、怎么学、获得什么”。</p>
+        </div>
+        <div class="features">
+          <article class="feature">
+            <span class="feature__tag">01</span>
+            <h3>同步校内语文知识点大纲</h3>
+            <span class="feature__sub">新设计逻辑</span>
+            <p>大纲对齐校内语文学习路径，覆盖字词句、修辞、阅读理解、人物分析、段落概括、主题提炼、表达方法和写作训练，课外阅读能力能够反哺校内学习。</p>
+          </article>
+          <article class="feature">
+            <span class="feature__tag">02</span>
+            <h3>选用优质文本承载能力训练</h3>
+            <span class="feature__sub">核心不变</span>
+            <p>孩子不是为了做题而读，而是在好文本中自然接触语言、结构、人物、主题和表达方法，积累真正可迁移的语文经验。</p>
+          </article>
+          <article class="feature">
+            <span class="feature__tag">03</span>
+            <h3>从阅读理解走向表达输出</h3>
+            <span class="feature__sub">技能升维</span>
+            <p>课堂引导孩子找证据、抓关键词、梳理结构、分析人物、理解主题，再进一步完成复述、讨论、仿写、写段落和写观点。</p>
+          </article>
+          <article class="feature">
+            <span class="feature__tag">04</span>
+            <h3>明确的课堂交付闭环</h3>
+            <span class="feature__sub">交付明确</span>
+            <p>每节课围绕导入问题、背景铺垫、文本精读、重点提问、方法建模、学生互动、课堂输出、课后承接展开，过程清楚、成果可见。</p>
+          </article>
+          <article class="feature">
+            <span class="feature__tag">05</span>
+            <h3>分级清晰，能力逐层进阶</h3>
+            <span class="feature__sub">能力升维</span>
+            <p>高级别产品重点从阅读理解进入结构化表达，进一步走向名著阅读、文学鉴赏、复杂人物分析、主题讨论和更完整的写作表达。</p>
+          </article>
+          <article class="feature">
+            <span class="feature__tag">06</span>
+            <h3>语文基础与高阶思维结合</h3>
+            <span class="feature__sub">综合能力提升</span>
+            <p>课程既重视词语、成语、句式、修辞、表达方法，也重视理解力、思辨力、审美力、价值判断和独立表达。</p>
+          </article>
+          <article class="feature">
+            <span class="feature__tag">07</span>
+            <h3>课后任务承接课堂成果</h3>
+            <span class="feature__sub">匹配新升级的作业逻辑</span>
+            <p>课后阅读、复述、表达、填空回收、仿写和写作任务，都围绕课堂目标设计，帮助孩子把课堂方法迁移到家庭阅读和校内语文学习中。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section--blue" id="faq">
+      <div class="section__inner">
+        <div class="section__head">
+          <div>
+            <div class="label">您关心的问题</div>
+            <h2>升级别的过程中您可能关心的问题</h2>
+          </div>
+          <p class="section__summary">围绕时间安排、课堂训练、选书逻辑、课后作业和升级后的真实收益，把产品切换背后的原因讲清楚。</p>
+        </div>
+
+        <div class="faq-list">
+          <article class="faq-card">
+            <h3><span class="faq-number">01</span><span>从时间安排上调整了什么？</span></h3>
+            <div class="qa-answer">
+              <p>从一周读一本书，到<span class="text-red">两周</span>读一本书。</p>
+              <ul>
+                <li>课堂环节上，<span class="text-red">增加训练学识</span>的方式，比如<span class="text-red">当堂阅读理解练习</span>。</li>
+                <li>课后作业的形式会更加偏向<span class="text-red">书写和训练目标</span>。</li>
+                <li>增加大的学识训练板块：<span class="text-red">当堂写作</span>。</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="faq-card">
+            <h3><span class="faq-number">02</span><span>为什么要调整？</span></h3>
+            <div class="qa-answer">
+              <p class="qa-subtitle">三年级以后的客观事实</p>
+              <p><span class="text-red">一二年级是爬小坡，但到三年级是爬大坡。</span>难度变大、对语文的要求变高、对于输出的要求变高。</p>
+              <div class="qa-note">
+                <p class="qa-subtitle">案例：三上第一单元</p>
+                <p class="text-green">几篇课文围绕学校生活，带孩子认识人物性格、品质，学习赏析有新鲜感的句子。校内学习时，孩子只要能够跟着体会理解事情、体会句子的美。</p>
+                <p>但考试中的考察方式会变成：</p>
+                <p><span class="text-red">性格品质</span>→孩子要能够梳理更长文章的核心事件，分析出对应词语，并且写出来。如果只会写词语、完全不练习概括，后续再次考察人物事件时，孩子已经被要求分析并概括对应事件。</p>
+                <p><span class="text-red">有新鲜感的句子</span>→不只是说这个句子有好词好句，还要判断题目问“好在哪儿”时，能说出用了什么手法，以及这个手法突出了景物什么特点。</p>
+              </div>
+              <p>要判断出题目要求并完整正确地写出来，孩子需要对知识吸收得更深、理解更透，句子组织表达更熟练，也需要有这些题目的训练经验。</p>
+              <p><span class="text-red">我们对于阅读能力和理解能力的要求会变得更高，当然，整个训练路径和训练重点也会相对应地变化。</span>一二年级大量阅读书目，让孩子有故事积累和理解力底子；现在会在输入基础上重新分配时间精力，既要更深入理解，也要侧重更有条理、更科学扎实、能给校内学习更多支持的输出训练。</p>
+            </div>
+          </article>
+
+          <article class="faq-card">
+            <h3><span class="faq-number">03</span><span>升级后主要课堂环节和之前有什么不同？</span></h3>
+            <div class="qa-answer">
+              <p><span class="text-red">精读的逻辑保持一致，依然围绕“导入、背景铺垫、精读文段、分析理解等等”展开</span>。家长依然能清楚看到孩子在课堂上学了什么、怎么学、最后获得了什么。</p>
+              <p>课程依然带着孩子<span class="text-red">完成针对书籍的阅读目标、学识目标、价值观目标</span>。</p>
+              <div class="qa-weeks">
+                <div class="qa-week">
+                  <strong>第一周</strong>
+                  <p>内容重心在前半本精读，最后二十分钟<span class="text-red">增加一篇针对当堂学识选择的阅读理解，</span>比如课上重点教比喻拟人，当堂练习就包含这个重点学识，让孩子熟悉考试是怎么考的。第二周课前，老师会根据大家的回答进行分析讲解。</p>
+                </div>
+                <div class="qa-week">
+                  <strong>第二周</strong>
+                  <p>内容重心在后半本精读，增加一个短阅读。<span class="text-red">第二节课练习整篇作文（校内单元作文）</span>，老师带孩子拆解结构思路，并点对点观察每个孩子写作的审题、结构、表达过程，在写中提供指导，课后详细批改。</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="faq-card">
+            <h3><span class="faq-number">04</span><span>升级后读什么书？</span></h3>
+            <div class="qa-answer">
+              <p><span class="text-red">升级后，课程的选书设计对齐校内主题，但依然保持阅星人的品味。</span></p>
+              <p>按照这个逻辑排列书目，家长不用担心阅读类型变窄。教材本身内容就很丰富，包含写景、科普文章、童话故事、小说等，体裁也有古诗、小说、散文等。</p>
+              <p><span class="text-red">我们的书也会一样，高年级选择儿童文学、寓言、诗歌、名著、自然文学、人物传记等有文学价值和成长价值的文本。孩子在好文本中自然接触语言、结构、人物、主题和表达方法。</span></p>
+            </div>
+          </article>
+
+          <article class="faq-card">
+            <h3><span class="faq-number">05</span><span>书目顺序是怎么变的？学识有什么变化？</span></h3>
+            <div class="qa-answer">
+              <p>教学大纲设计逻辑会根据语文学习路径，<span class="text-red">以校内语文学识教授顺序为主线</span>，安排这个学年需要通过整本书教授孩子的学识，并依次选择合适的书目。</p>
+              <p class="qa-subtitle">教材知识点设计：由易到难、螺旋上升</p>
+              <div class="qa-note">
+                <p>一个熟悉的例子是：学校第一单元的课文故事，课上老师带读讲解人物性格品质，课后练习就要求孩子能自己分析新故事中的人物特点。</p>
+                <p>写作<span class="text-green">《猜猜他是谁》</span>，则要求孩子掌握通过事件写出人物性格品质的能力，完成整篇习作。其实这些能力是环环相扣的。</p>
+                <p><span class="text-red">但是校内给孩子学习和掌握的时间是很短的，一个单元大概一周半就上完了。到了考试已经要求他们有自己独自分析判断并且答题的能力。</span></p>
+              </div>
+              <p class="qa-subtitle">在我们的课堂上</p>
+              <p>三上第一单元涉及的知识点，<span class="text-red">我们大概会提前两周左右，通过一本书两周的时间带着孩子训练这些能力，</span>通过课堂和课后学习巩固，孩子已经接触到并多次通过自己的思考分析概括相关事件品质、赏析句子。</p>
+              <p>当他们两周后在校内遇到新课文时，正好处于知识有些遗忘的时候，会发现“这个知识点我之前在阅星人学过，我知道在考什么”，不会陌生害怕，反而更熟悉、更自信。</p>
+              <p>而且<span class="text-red">语文本身是有滞后性的，在校内再次接触，孩子反而有机会再一次琢磨前段时间的知识思考逻辑，巩固也会更扎实，同时也查漏补缺。</span></p>
+            </div>
+          </article>
+
+          <article class="faq-card">
+            <h3><span class="faq-number">06</span><span>课后作业是怎么调整的？</span></h3>
+            <div class="qa-answer">
+              <p>课后作业原先主要通过语言表达来回收对书籍内容的理解，<span class="text-red">现在转向更高频率的书面输出能力的训练。</span></p>
+              <div class="qa-task-list">
+                <ul>
+                  <li>阅读内容的回答变成在书上圈画或批注：一来训练孩子边读边留下痕迹，二来练习句子组织，巩固课上讲的品质和赏析好词好句的思路。</li>
+                  <li>书面练习继续回收前面的阅读，用考试中考察的形式帮助孩子熟悉题型。</li>
+                  <li>安排摘抄任务，帮助孩子积累文本中的好词好句和表达材料。</li>
+                  <li>保留自由阅读，无压力地放松享受；大多数时候和课堂阅读内容有重合，建议孩子用重点章节略读的方式再次熟悉。</li>
+                  <li>增加课后阅读理解，再次巩固阶段重点学识。</li>
+                  <li>课堂写作有压力，课后作业相对轻松。<span class="text-red">保留一个语音表达，让孩子深度感受价值观，分享阅读感受。</span></li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="faq-card">
+            <h3><span class="faq-number">07</span><span>家长还是想要读更多书？</span></h3>
+            <div class="qa-answer">
+              <p>我们高年级在大量调研和实际教学经验中已经发现，<span class="text-red">要学好语文，一定是要积累量和理解力一起增强的。输入和输出都非常重要。</span></p>
+              <p>过去我们已经积累了大量的阅读经验和阅读能力，这是阅读里的“浪漫”。现在进入高级别后，需要更专注于“精细”：把读过的内容理解透、表达清楚、写得出来。</p>
+              <p>另外，书本看似减少，但书籍难度和厚度都会增加，实则阅读量上没有特别大的变化。</p>
+              <p>如果光有积累量，不花时间训练输出，也很难达到高年级目标。孩子只能原地踏步，<span class="text-red">即使精读了更多的书，输出能力却跟不上，也不行。</span></p>
+              <p>未来学校各科难度加深，作业也更多。要想完成对书的深度吸收，理解中高年级更难的文本和更深的情感，就很难在一周内把高年级书目充分解析透，同时达成理解、积累、输出的同步推进。</p>
+              <p>不用担心，把一本书分成两周，积累效果不会变少，因为扎得更深。深度上只可能比以前要求更高，也能更充分利用难度升级后的文本。</p>
+              <p><span class="text-red">如果单纯是想要孩子多读更多书</span>，吸收知识，像低年级一样侧重理解有趣的故事，也有时间，不如<span class="text-red">参考孩子的兴趣</span>去选择书积累，或者和孩子共读。</p>
+            </div>
+          </article>
+
+          <article class="faq-card">
+            <h3><span class="faq-number">08</span><span>升级以后，有什么好处？已经升级的孩子有哪些变化收获？</span></h3>
+            <div class="qa-answer">
+              <p><span class="text-red">首先，在三年级的过渡期，孩子语文上几乎无感过渡，不需要额外付出很多时间去消化学校作业和考试上的新变化。</span></p>
+              <p>由于阅读有大量理解力打底，孩子理解新题型、学习高年级新增答题方法时吸收速度更快。现在已经四五年级的孩子，成绩始终保持较稳定的状态，不止在期末拿到漂亮分数，平时较难的单元测验也一样稳定。</p>
+              <p>写作也不像其他孩子一样一个字一个字挤，而是更有信心。因为写作学习方式是脚踏实地从底层学起，孩子保有自己的想象力和创造力，不需要依赖范文或 AI，在写校内同主题作文时也时不时会有新的灵感。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section--white" id="value">
+      <div class="section__inner">
+        <div class="value-grid">
+          <div class="value-panel">
+            <div class="label">语文学习价值</div>
+            <h2>用课外好书，补充并激活校内语文</h2>
+            <p>校内语文常以课文为单位学习知识点。阅星人高级别课程把这些知识点放进更丰富的课外文本中反复使用，让孩子从“知道知识点”走向“会用知识点”。</p>
+          </div>
+          <div class="result-list" id="outcomes">
+            <article class="result-card">
+              <div>
+                <h3>阅读理解能力</h3>
+                <p>训练找依据、抓关键词、概括内容、分析人物、理解主题、品味语言和回答开放题。</p>
+              </div>
+            </article>
+            <article class="result-card">
+              <div>
+                <h3>语言表达能力</h3>
+                <p>通过复述、讨论、观点表达和视频输出，让孩子把“想到了”说清楚、说完整。</p>
+              </div>
+            </article>
+            <article class="result-card">
+              <div>
+                <h3>写作迁移能力</h3>
+                <p>从文本中学习人物描写、景物描写、情节安排、段落结构和观点表达，再迁移到自己的写作中。</p>
+              </div>
+            </article>
+            <article class="result-card">
+              <div>
+                <h3>独立思考能力</h3>
+                <p>在人物、主题、寓意和价值判断中形成自己的理解，学会用文本证据支持观点。</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="summary-band">
+      <div class="summary-band__inner">
+        <div>
+          <h2>高级别课程的最终目标</h2>
+          <p>让孩子真正从“读过一本书”走向“读懂、会说、能写、会思考”，把阅读变成可持续生长的语文能力。</p>
+        </div>
+        <div class="closing-points" aria-label="最终目标要点">
+          <div>同步校内知识点</div>
+          <div>用精读打通理解和表达</div>
+          <div>让课后任务承接课堂成果</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section--white" id="articles">
+      <div class="section__inner">
+        <div class="section__head">
+          <div>
+            <div class="label">延伸阅读</div>
+            <h2>下面三篇文章会从阅读、训练和语文素养的关系继续展开，帮助家长更完整地理解语文和阅读之间的关系。</h2>
+          </div>
+        </div>
+        <div class="article-grid">
+          <a class="article-card" href="https://mp.weixin.qq.com/s/CKqos_SKPTl1rS44aJdZ1w" target="_blank" rel="noopener noreferrer">
+            <span class="article-card__label">相关阅读 01</span>
+            <h3>“只读不练”和“只练不读”都不行</h3>
+            <span class="article-card__cta">点击阅读</span>
+          </a>
+          <a class="article-card" href="https://mp.weixin.qq.com/s/JX2G31LhCKEvavPDGI0pPg" target="_blank" rel="noopener noreferrer">
+            <span class="article-card__label">相关阅读 02</span>
+            <h3>如何建立稳固扎实的语文能力</h3>
+            <span class="article-card__cta">点击阅读</span>
+          </a>
+          <a class="article-card" href="https://mp.weixin.qq.com/s/8r6v8Mn7nixot5ZHgGs4hg" target="_blank" rel="noopener noreferrer">
+            <span class="article-card__label">相关阅读 03</span>
+            <h3>一次性说清楚整本书阅读和语文素养</h3>
+            <span class="article-card__cta">点击阅读</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="section__inner">
+        <span>阅星人高级别产品概述</span>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
